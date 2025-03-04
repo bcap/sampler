@@ -14,7 +14,7 @@ func TestBadRatio(t *testing.T) {
 	testBadRatio := func(ratio float64) {
 		in := bytes.Buffer{}
 		out := bytes.Buffer{}
-		err := Sample(ratio, 0, &in, &out)
+		err := Sample(&in, &out, ratio, 0)
 		require.Equal(t, ErrBadRatio, err)
 	}
 
@@ -93,7 +93,7 @@ func testWithSeed(t *testing.T, inputLines []string, outputLines []string, ratio
 
 	out := bytes.Buffer{}
 
-	err := Sample(ratio, seed, &in, &out)
+	err := Sample(&in, &out, ratio, seed)
 	require.NoError(t, err)
 
 	resultLines := []string{}
