@@ -14,7 +14,7 @@ Usage of ./sampler:
     	Use this seed for randomness instead of the current time (default -1)
 ```
 
-Example:
+## Example:
 
 ```
 % seq 1000000 | ./sampler --percent .001 --seed 42
@@ -26,3 +26,7 @@ Example:
 894870
 936412
 ```
+
+## Install
+
+`go install github.com/bcap/sampler@latest`
